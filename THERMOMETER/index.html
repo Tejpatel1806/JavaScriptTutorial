@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fontawesome.com/v4.7/cheatsheet/">
+    <title>Document</title>
+</head>
+<body>
+    <div class="outerdiv">
+        <div class="innerdiv">
+            <h1 class="mainheading">I am thermometer <span id="temp" class="fa"></span></h1>
+        </div>
+    </div>
+    <script>
+        const tempload= () =>{
+            let temp=document.getElementById('temp');
+            temp.innerHTML='&#xf2cb';
+        }
+        tempload();
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .parentdiv{
+        height:400px;
+        width:500px;
+        border:2px solid black;
+        cursor: pointer;
+        background-color: bisque;
+    }
+    .childdiv{
+        height:200px;
+        width:300px;
+        border:2px solid red;
+        background-color: aqua;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <div class="parentdiv" id="parentid">
+        <div class="childdiv" id="childid"></div>
+    </div>
+    <script>
+        const parentid1=document.getElementById('parentid');
+        const childid1=document.getElementById('childid');
+
+        
+        const parentcall = ()=>{
+            alert('parent div call');
+            console.log('parent call');
+        }
+        const childcall = ()=>{
+            alert('child div call');
+            console.log('child call');
+            // event.stopPropagation();
+        }
+        parentid1.addEventListener('click',parentcall,false);
+        childid1.addEventListener('click',childcall,false);
+
+
+    </script>
+</body>
+</html>

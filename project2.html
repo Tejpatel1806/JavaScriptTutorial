@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Joke</title>
+</head>
+<style>
+    .container{
+        height:400px;
+        width:700px;
+        margin-top: 200px;
+        margin-bottom: 300px;
+        margin-left: 400px;
+        margin-right: 500px;
+        background-color: bisque;
+        border: 2px solid red ;
+        border-radius: 5px;
+    }
+    h3{
+        margin-top: 80px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    .joke{
+        margin-bottom: 50px;
+        text-align: center;
+    }
+    .btn{
+        text-align: center;
+        cursor: pointer;
+        margin-left: 320px;
+    }
+
+</style>
+<body>
+    <div class="container">
+        <h3>best jokes to make your day</h3>
+        <div id="joke" class="joke">Awesome joke is loading...</div>
+        <button id="jokeBtn" class="btn">Next Joke</button>
+    </div>
+    <script>
+        const jokes=document.querySelector('#joke');
+        const jokeBtn=document.querySelector('#jokeBtn');
+        const generatejokes=() =>{
+            const setHeader ={
+                headers:{
+                    Accept:"application/json"
+                }
+            }
+            fetch('https://icanhazdadjoke.com/',setHeader)
+            .then((res) => res.json())//json html form ne normal form ma convert kare 
+            .then((data) => {
+                jokes.innerHTML=data.joke;
+            }).catch((error) => {
+                console.log(error);
+            })
+        }
+
+        jokeBtn.addEventListener('click',generatejokes);
+        generatejokes();
+    </script>
+</body>
+</html>

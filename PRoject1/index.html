@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tej's Website</title>
+</head>
+<style>
+    body {
+        width: 100vw;
+        height: 100vh;
+        background-color: rgb(198, 204, 209);
+        display: grid;
+        place-items: center;
+    }
+
+    .main {
+        border-radius: 20px;
+        border: solid rgba(79, 173, 157, 0.753);
+        background-color: rgba(79, 173, 157, 0.753);
+        width: 50vw;
+        height: 35vh;
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .abc {
+        margin-top: 15px;
+        background-color: rgb(248, 248, 248);
+        border: 2px solid rgb(28, 167, 143);
+        border-radius: 30px;
+        color: rgb(0, 0, 0);
+        font-size: larger;
+        padding: 10px 20px 10px 20px;
+        cursor: pointer;
+    }
+
+</style>
+
+<body>
+    <form id="tempCalc">
+        <div class="main">
+            <h2 class="title" for="tem">Please enter the temperature you have to convert</h2>
+            <br>
+            <input type="number" name="temp" id="temp">
+            <select name="temp_diff" id="temp_diff">
+                <option value="cel">Celsius</option>
+                <option value="fah">Fahrenheit</option>
+            </select>
+            <br>
+            <button  class="abc" type="button" onclick="calculateTemp()" name="temp">submit</button>
+            <br>
+            <span id="resultcontainer"></span>
+        </div>
+    </form>
+
+    <script>
+        const calculateTemp = () => {
+            const numberTemp = document.getElementById('temp').value;
+            const tempSelected = document.getElementById('temp_diff').value;
+            // const valueTemp = tempSelected.options[tempSelected.selectedindex].value;
+            //kone select karyo teni index return karse ,index 0 thi start thase
+
+            const celtoFarhent = (cel) => {
+                let farenheit = Math.round((cel * 9 / 5) + 32);
+                return farenheit;
+            }
+            const faretoCelsi = (feh) => {
+                let celsius = Math.round((feh - 30) / 2);
+                return celsius;
+            }
+
+            let result;
+            if (tempSelected == "cel") {
+                result = celtoFarhent(numberTemp);
+                document.getElementById('resultcontainer').innerHTML = `= ${result}Fahernht`;
+            }
+            else {
+                result = faretoCelsi(numberTemp);
+                document.getElementById('resultcontainer').innerHTML = `= ${result}Celsius`;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .main-heading
+    {
+        margin-bottom: 20px;
+        text-align: center;
+        margin-top: 25vh;
+    }
+    button
+    {
+        display: inline-block;
+        background-color: azure;
+        color:red;
+        font-size: 16px;
+        border-radius: 3px;
+         text-align: center; 
+        text-decoration: none;
+        padding:10px;
+        width: auto;
+        padding-left: 54px;
+        margin-right: 25px;
+    }
+    img
+    {
+        height:90px;
+        width:75px;
+        margin-left: 2px;
+        margin-bottom: 50px;
+    }
+    body{
+        background-color: rosybrown;
+    }
+</style>
+<body>
+    <div class="main-heading">
+    <h1>can you turn light on?</h1>
+    <img src="lightoff.png" alt="lightoff pic" id="myimage">
+    <br>
+    <button onclick="document.getElementById('myimage').src='lighton.png' ">Turn on light </button>
+    <button onclick="document.getElementById('myimage').src='lightoff.png' ">Turn off light </button>
+    </div>
+</body>
+</html>

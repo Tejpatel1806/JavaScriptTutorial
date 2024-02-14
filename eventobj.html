@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .poi{
+        text-align: center;
+    }
+    .abc
+    {
+        height:200px;
+        width:150px;
+        text-align: center;
+        background-color: aqua;
+        margin-top: 80px;
+        margin-left: 100px;
+    }
+    .button
+    {
+        height:200px;
+        width:150px;
+        text-align: center;
+        background-color: aqua;
+        margin-top: 80px;
+        margin-left: 100px;
+    }
+</style>
+<body>
+    <p class="poi">
+        Let's see what is event object
+    </p>
+    <div class="abc">
+        EVENT OBJECT
+    </div>
+    <div class="button">
+        <button class="favorite styled"
+        type="button" id="fourtheay">
+    Add to favorites
+</button>
+    </div>
+    <script>
+       const fourtheay=document.getElementById('fourtheay');
+       const checkEvent = () =>{
+           alert('i dont know anytging');
+           console.log(event);
+           console.log(event.target);
+           console.log(event.type);
+       }
+       fourtheay.addEventListener('click',checkEvent);
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+         display:inline-flex; 
+        background-color: aquamarine;
+        text-align: center;
+    }
+    .counter-container{
+        margin-left:150px;
+        margin-right: 200px;
+        margin-top: 300px;
+    }
+
+</style>
+<body>
+    <div class="counter-container">
+        <img src="imag1.png" alt="Girl in a jacket" width="50" height="60">
+        <div class="counter" data-target="4000"></div>
+        <span>project complted</span>
+    </div>
+    <div class="counter-container">
+        <img src="img3.png" alt="Girl in a jacket" width="50" height="60">
+        <div class="counter" data-target="15000"></div>
+        <span>our happy climts</span>
+    </div>
+    <div class="counter-container">
+        <img src="img4.png" alt="Girl in a jacket" width="50" height="60">
+        <div class="counter" data-target="500"></div>
+        <span>oncoing projects</span>
+    </div>
+    <script>
+        const counters=document.querySelectorAll('.counter');
+        counters.forEach((counter) =>{
+            counter.innerHTML=0;
+            const updatecounter =() =>{
+                const targetCount=+counter.getAttribute('data-target');
+                const staringcount=Number(counter.innerHTML);
+                const incr=targetCount/100;
+                if(staringcount < targetCount)
+                {
+                    counter.innerHTML= `${Math.round(staringcount + incr)} `;
+                    setTimeout(updatecounter,10)
+                }
+                else{
+                    counter.innerHTML=targetCount;
+                }
+            }
+            updatecounter();
+        })
+    </script>
+
+
+</body>
+</html>
